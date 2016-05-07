@@ -18,12 +18,14 @@ public class MainActivity extends AppCompatActivity {
         listatContatos = new ArrayList<>();
         listatContatos.add(new Contato("Fulano", "(51) 9999-9999"));
         listatContatos.add(new Contato("Ciclano", "(51) 9999-9999"));
-        listatContatos.add(new Contato("Beltrano", "(51) 9999-9999"));
+        listatContatos.add(new Contato("Beltrano de Tal", "(51) 9999-9999"));
 
         updateList();
     }
 
     private void updateList() {
-        ListView listat = (ListView)findViewById(R.id.listView);
+        ContatoAdapter adapter = new ContatoAdapter(this,listatContatos);
+        ListView lista = (ListView)findViewById(R.id.listView);
+        lista.setAdapter(adapter);
     }
 }
